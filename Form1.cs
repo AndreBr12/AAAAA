@@ -19,8 +19,15 @@ namespace lampa
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double a = Convert.ToInt32(textBox1.Text) - Convert.ToInt32(textBox2.Text);
-            label1.Text = a.ToString();
+
+            int Num;
+            try
+            {
+                double a = (Convert.ToDouble(textBox1.Text) + Convert.ToDouble(textBox2.Text)) / 2;
+                label1.Text = a.ToString();
+            }
+            catch (FormatException) { label1.Text = "Ощибка"; }
+            
         }
     }
 }
